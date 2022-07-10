@@ -35,13 +35,12 @@ function setupIntialValues() {
 function update() {
     calculateMonthlyPayment();
     document.getElementById("monthly-payment").textContent=`$ ${calculateMonthlyPayment()}`;
-
 }
   
 // Given an object of values (a value has amount, years and rate ),
 // calculate the monthly payment.  The output should be a string
 // that always has 2 decimal places.
-function calculateMonthlyPayment(values) {
+function calculateMonthlyPayment() {
     let curValsObj = getCurrentUIValues();
     let curValsArr = Object.values(curValsObj)
     let P = curValsArr[0];
@@ -65,9 +64,9 @@ function calculateMonthlyPayment(values) {
     }
 }
   
-// Given a string representing the monthly payment value,
-// update the UI to show the value.
-function updateMonthly(monthly) {
+// // Given a string representing the monthly payment value,
+// // update the UI to show the value.
+// function updateMonthly(monthly) {
 
-}
+// }
   
