@@ -45,7 +45,7 @@ function calculateMonthlyPayment() {
     let curValsArr = Object.values(curValsObj)
     let P = curValsArr[0];
     let n = curValsArr[1] * 12;
-    let i = curValsArr[2] / 12;
+    let i = (curValsArr[2] / 100) / 12;
 
     if (P === 0 || n === 0) {
         return '0.00';
@@ -57,9 +57,10 @@ function calculateMonthlyPayment() {
         return strPayment;
 
     } else {
-        let rawPayment = (P * i) / (1 - (1 + i) ** -n);
+        let rawPayment = (P * i) / (1 - (1 + i) ** (-n));
         let monthlyPayment = rawPayment.toFixed(2);
         let strPayment = monthlyPayment.toString();
+
         return strPayment;
     }
 }
